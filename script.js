@@ -17,10 +17,11 @@ const button = document.querySelectorAll('.nav-links');
 let catButton = button[0]
 let dogButton = button[1]
 let foxButton = button[2]
+let beachButton = button[3]
 catButton.addEventListener('click', fetchCatImage);
 dogButton.addEventListener('click', fetchDogImage);
 foxButton.addEventListener('click', fetchFoxImage);
-
+beachButton.addEventListener('click', fetchBeachImage);
 
 
 function fetchCatImage() {
@@ -49,5 +50,12 @@ function fetchFoxImage() {
 }
 
 
+function fetchBeachImage() {
+    fetch(`https://source.unsplash.com/1600x900/?beach`).then((response) => {
+        imagesz.innerHTML = `
+      <img class="beach-image" src="${response.url}" alt="beach image"/>
+    `
+    })
+}
 
 
