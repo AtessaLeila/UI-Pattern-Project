@@ -12,5 +12,6 @@ This project utilizes the Hamburger Menu modal. There should be a hamburger icon
 Four separate API's were used for four separate random image generators.
 
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Contact Me
+
+https://github.com/AtessaLeila
