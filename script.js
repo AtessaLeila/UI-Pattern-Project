@@ -24,12 +24,25 @@ foxButton.addEventListener('click', fetchFoxImage);
 beachButton.addEventListener('click', fetchBeachImage);
 
 
+// function fetchCatImage() {
+//     fetch('https://aws.random.cat/meow')
+//         .then(response => response.json())
+//         .then(data => {
+//             imagesz.innerHTML = `<img src="${data.file}"/>`;
+//         })
+// }
+
 function fetchCatImage() {
-    fetch('https://aws.random.cat/meow')
+
+    fetch('https://api.thecatapi.com/v1/images/search')
         .then(response => response.json())
         .then(data => {
-            imagesz.innerHTML = `<img src="${data.file}"/>`;
+            let cats = data[0].url
+            let catsImg = document.querySelector("img")
+            catsImg.setAttribute('src', `${cats}`)
+            console.log(data)
         })
+        .catch(err => console.log(err))
 }
 
 function fetchDogImage() {
